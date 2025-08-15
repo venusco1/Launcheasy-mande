@@ -229,7 +229,7 @@ button {
 .header_section_top {
     width: 100%;
     float: left;
-    background-color: #2b2a29;
+    background-color:#DAA520;
     clip-path: polygon(0 0, 100% 0, 96% 100%, 3% 100%);
     height: auto;
     padding: 10px 0px;
@@ -240,6 +240,20 @@ button {
     margin: 0 auto;
     text-align: center;
 }
+.socialmedia {
+    padding: 20px;
+}
+.socialmedia i {
+  color: white;         /* Default icon color */
+  transition: color 0.3s ease;
+  font-size: 20px;      /* Optional: adjust icon size */
+}
+
+.socialmedia:hover i {
+  color: black;         /* On hover, icon turns black */
+}
+
+
 
 .custom_menu ul {
     margin: 0px;
@@ -278,6 +292,7 @@ button {
     float: left;
     text-align: center;
     padding: 30px 0px;
+    margin-top: 70px;
 }
 
 
@@ -293,6 +308,7 @@ button {
 
 .containt_main {
     display: flex;
+    margin-top: -10px;
 }
 
 
@@ -486,7 +502,7 @@ a:hover {
 .banner_taital {
     width: 100%;
     font-size: 60px;
-    color: #ffffff;
+    color: #ffc107;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
@@ -868,6 +884,34 @@ input.mail_bt::placeholder {
 
 .subscribe_bt a:hover {
     color: #ffffff;
+
+
+.footer-place {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-place ul {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+}
+
+.footer-place li {
+    float: left;
+    font-size: 16px;
+    color: #f1f1f1;
+    padding: 20px 10px 0px 10px;
+}
+
+.footer-place li a {
+    color: #f1f1f1;
+}
+
+.footer-place li a:hover {
+    color: #f26522;
+}
 }
 
 .footer_menu {
@@ -875,6 +919,7 @@ input.mail_bt::placeholder {
     margin: 0 auto;
     text-align: center;
 }
+
 
 .footer_menu ul {
     margin: 0px;
