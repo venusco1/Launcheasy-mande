@@ -1,587 +1,805 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M & E Products & Services</title>
+  <!-- Basic Meta Tags -->
+  <title>M & E Mobiles and Electronics | Latest Smartphones & Gadgets Shop</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="M & E Mobiles and Electronics - Your one-stop shop for smartphones, laptops, tablets, accessories, and the latest electronic gadgets at the best prices.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- SEO Keywords -->
+  <meta name="keywords" content="M & E Mobiles, smartphones, electronic gadgets, tablets, laptops, mobile accessories, electronics store, buy mobiles online, best gadgets shop">
 
-  <!-- FontAwesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Open Graph (For Social Media Sharing) -->
+  <meta property="og:title" content="M & E Mobiles and Electronics | Latest Smartphones & Gadgets">
+  <meta property="og:description" content="Discover top mobiles, laptops, tablets, and electronic gadgets at M & E Mobiles and Electronics. Shop quality tech products with the best deals.">
+  <meta property="og:image" content="https://yourwebsite.com/images/og-image.jpg">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <meta property="og:type" content="website">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="M & E Mobiles and Electronics | Smartphones & Gadgets Shop">
+  <meta name="twitter:description" content="Shop the latest smartphones, laptops, tablets & electronic gadgets at M & E Mobiles and Electronics.">
+  <meta name="twitter:image" content="https://yourwebsite.com/images/twitter-card.jpg">
 
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://yourwebsite.com/">
 
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+  <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+  <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+  <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-  </style>
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
+
+
 <body>
 
-<!-- Topbar Start -->
-<header class="topbar">
-  <div class="container">
-    <div class="row text-center text-md-start g-2 justify-content-center">
+<div class="super_container">
 
-      <!-- Social Media -->
-      <div class="col-4 col-md-auto">
-        <div class="dropdown">
-          <button class="btn btn-sm btn-outline-dark dropdown-toggle d-flex align-items-center justify-content-center"
-                  type="button" id="socialDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-share-alt me-2"></i> Follow Us
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="socialDropdown">
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="https://www.facebook.com" target="_blank">
-                <i class="fab fa-facebook-f me-2 text-primary"></i> Facebook
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="https://www.instagram.com" target="_blank">
-                <i class="fab fa-instagram me-2 text-danger"></i> Instagram
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="https://wa.me/919876543210" target="_blank">
-                <i class="fab fa-whatsapp me-2 text-success"></i> WhatsApp
-              </a>
-            </li>
-          </ul>
+	<!-- Header -->
+
+	<header class="header trans_300">
+
+	
+
+		<div class="top_nav">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="top_nav_left text-center">Free shipping on all orders above ₹500</div>
+					</div>
+					<!-- <div class="col-md-6 text-right">
+						<div class="top_nav_right">
+							<ul class="top_nav_menu">
+
+
+								<li class="currency">
+									<a href="#">
+										usd
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="currency_selection">
+										<li><a href="#">cad</a></li>
+										<li><a href="#">aud</a></li>
+										<li><a href="#">eur</a></li>
+										<li><a href="#">gbp</a></li>
+									</ul>
+								</li>
+								<li class="language">
+									<a href="#">
+										English
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="language_selection">
+										<li><a href="#">French</a></li>
+										<li><a href="#">Italian</a></li>
+										<li><a href="#">German</a></li>
+										<li><a href="#">Spanish</a></li>
+									</ul>
+								</li>
+								<li class="account">
+									<a href="#">
+										My Account
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="account_selection">
+										<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+										<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+
+		<!-- Main Navigation -->
+
+		<div class="main_nav_container">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-right">
+						<div class="logo_container">
+							<a href="#">Mobiles <span>Electronics</span></a>
+						</div>
+						<nav class="navbar">
+							<ul class="navbar_menu">
+								<li><a href="#">home</a></li>
+								<li><a href="#products">Products</a></li>
+								<!-- <li><a href="#">Offers</a></li> -->
+								<!-- <li><a href="#">About Us</a></li> -->
+								<li><a href="contact.html">contact</a></li>
+							</ul>
+							<ul class="navbar_user">
+								<li>
+									<a href="tel:+919999999999" title="Call Now">
+										<i class="fa fa-phone" aria-hidden="true"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" title="Instagram">
+										<i class="fa fa-instagram" aria-hidden="true"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://g.page/r/CaCRdnp0YoHMEAE/review" target="_blank" title="Google Reviews">
+										<i class="fa fa-star" aria-hidden="true"></i>
+									</a>
+								</li>
+							</ul>
+							<div class="hamburger_container">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+	<div class="fs_menu_overlay"></div>
+	<div class="hamburger_menu">
+		<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+		<div class="hamburger_menu_content text-right">
+			<ul class="menu_top_nav">
+				<!-- <li class="menu_item has-children">
+					<a href="#">
+						usd
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="#">cad</a></li>
+						<li><a href="#">aud</a></li>
+						<li><a href="#">eur</a></li>
+						<li><a href="#">gbp</a></li>
+					</ul>
+				</li>
+				<li class="menu_item has-children">
+					<a href="#">
+						English
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="#">French</a></li>
+						<li><a href="#">Italian</a></li>
+						<li><a href="#">German</a></li>
+						<li><a href="#">Spanish</a></li>
+					</ul>
+				</li>
+				<li class="menu_item has-children">
+					<a href="#">
+						My Account
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+						<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+					</ul>
+				</li> -->
+				<ul class="menu_top_nav">
+				<li class="menu_item"><a href="index.html">Home</a></li>
+				<li class="menu_item"><a href="#products">Products</a></li>
+				<!-- <li class="menu_item"><a href="offers.html">Offers</a></li> -->
+				<!-- <li class="menu_item"><a href="about.html">About Us</a></li> -->
+				<li class="menu_item"><a href="contact.html">Contact</a></li>
+				</ul>
+
+			</ul>
+		</div>
+	</div>
+
+	<!-- Slider -->
+
+<!-- Modernized Main Slider for M & E Mobiles and Electronics -->
+<div class="main_slider position-relative" style="background-image:url('images/slider_1.png'); background-size:cover; background-position:center; height:100vh;">
+  
+  <!-- Dark Overlay -->
+  <div class="overlay" style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.55);"></div>
+  
+  <div class="container h-100 position-relative">
+    <div class="row align-items-center justify-content-center h-100 text-center">
+      <div class="main_slider_content">
+        
+        <h6 style="color:#ffffff; letter-spacing:3px; text-transform:uppercase;">Welcome to</h6>
+        
+        <h1 style="color:#ffa600; font-weight:800; font-size:3rem; text-shadow:0 2px 10px rgba(0,0,0,0.6);">
+          M & E
+        </h1>
+        
+        <p style="color:#f1f1f1; font-size:1.2rem; margin-bottom:28px; line-height:1.6;">
+          Mobiles & Accessories • Electronic Gadgets • Smart Devices <br>
+          Best Prices • Trusted Quality • Top Brands
+        </p>
+        
+        <div>
+          <a href="shop.html" class="btn btn-lg" style="background:#ffa600; color:#fff; padding:12px 32px; border-radius:30px; font-weight:600;">
+            See Our Collection
+          </a>
         </div>
-      </div>
-
-      <!-- Contact Numbers -->
-      <div class="col-4 col-md-auto">
-        <div class="dropdown">
-          <button class="btn btn-sm btn-outline-dark dropdown-toggle d-flex align-items-center justify-content-center"
-                  type="button" id="phoneDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-phone me-2"></i> Contact
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="phoneDropdown">
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="tel:+919876543210">
-                <i class="fas fa-phone me-2 text-success"></i> +91 9876543210
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="tel:+911234567890">
-                <i class="fas fa-phone me-2 text-success"></i> +91 1234567890
-              </a>
-            </li>
-          </ul>
+        
+        <!-- Optional Action Buttons -->
+        <!--
+        <div style="margin-top:20px;">
+          <a href="tel:+919999999999" class="btn btn-warning btn-sm me-2"><i class="fa fa-phone"></i> Call Now</a>
+          <a href="https://g.page/r/CaCRdnp0YoHMEAE/review" target="_blank" class="btn btn-success btn-sm"><i class="fa fa-star"></i> Google Reviews</a>
         </div>
+        -->
+        
       </div>
-
-      <!-- Reviews -->
-      <div class="col-4 col-md-auto">
-        <div class="dropdown">
-          <button class="btn btn-sm btn-outline-dark dropdown-toggle d-flex align-items-center justify-content-center"
-                  type="button" id="reviewDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-star me-2"></i> Reviews
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
-            <li>
-              <a class="dropdown-item d-flex align-items-center" 
-                  href="https://www.google.com/search?q=M+%26+E+Products+Reviews" target="_blank">
-                <i class="fas fa-star me-2 text-warning"></i> Google Reviews
-              </a>
-            </li>
-            <li class="dropdown-item d-flex align-items-center justify-content-center">
-              <span>
-                <i class="fas fa-star me-1 text-warning"></i>
-                <i class="fas fa-star me-1 text-warning"></i>
-                <i class="fas fa-star me-1 text-warning"></i>
-                <i class="fas fa-star-half-alt me-1 text-warning"></i>
-                <i class="far fa-star me-1 text-warning"></i>
-                3.5 / 5
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
     </div>
-  </div>
-</header>
-<!-- Topbar End -->
-
-<!-- Navbar Start -->
-<!-- Navbar -->
-<nav class="navbar d-flex align-items-center">
-  <!-- Left: Sidebar toggle -->
-  <button class="btn btn-light" id="sidebarToggle"><i class="fas fa-bars"></i></button>
-
-  <!-- Center: blank -->
-  <div class="mx-auto text-center">M AND E</div>
-
-  <!-- Right: Quick links -->
-  <div class="d-flex gap-2">
-    <a href="#" class="btn btn-light">Offers</a>
-  </div>
-</nav>
-
-<!-- Sidebar -->
-<div id="sidebar" class="sidebar">
-  <div>
-    <div class="sidebar-header">
-      <h3>M & E Mobiles | Electronics</h3>
-      <button id="closeSidebar" class="btn btn-sm"><i class="fas fa-times"></i></button>
-    </div>
-    <ul class="sidebar-menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Mobiles</a></li>
-      <li><a href="#">Headphones</a></li>
-      <li><a href="#">Accessories</a></li>
-      <li><a href="#">Offers</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </div>
-  <div class="sidebar-footer">
-    <p>© 2025 M & E Products</p>
   </div>
 </div>
 
-<!-- Overlay -->
-<div id="overlay"></div>
-  
-<!-- End Sidebar -->
+
+	<!-- Banner -->
+
+	<div class="banner">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="banner_item align-items-center" style="background-image:url(images/cat1.jpg)">
+						<div class="banner_category">
+							<a href="categories.html">Mobiles</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="banner_item align-items-center" style="background-image:url(images/cat4.jpg)">
+						<div class="banner_category">
+							<a href="categories.html">Mobile Accessories</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="banner_item align-items-center" style="background-image:url(images/cat5.png)">
+						<div class="banner_category">
+							<a href="categories.html">Audio Devices</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="col-md-4">
+					<div class="banner_item align-items-center" style="background-image:url(images/cat6.png)">
+						<div class="banner_category">
+							<a href="categories.html">Sound & Recording</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="banner_item align-items-center" style="background-image:url(images/cat2.jpg)">
+						<div class="banner_category">
+							<a href="categories.html">Watches</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="banner_item align-items-center" style="background-image:url(images/cat3.jpg)">
+						<div class="banner_category">
+							<a href="categories.html">Electronic Gadgets</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<!-- New Arrivals -->
+
+	<div id="products" class="new_arrivals">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_title new_arrivals_title">
+						<h2>New Arrivals</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col text-center">
+					<div class="new_arrivals_sorting">
+						<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".mobile">Mobiles</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">Accessories</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">Audio Devices</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">Sound & Recording</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">Watches</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">Electronic Gadgets</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+
+						<!-- Product 1 -->
+
+						<div class="product-item mobile">
+							<div class="product discount product_filter">
+								<div class="product_image">
+								<img src="images/mobile2.png" alt="">
+								</div>
+								<div class="favorite favorite_left"></div>
+								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-₹3000</span></div>
+								<div class="product_info">
+								<h6 class="product_name">
+									<a href="single.html">Oppo K12X 5G Mobile Phone Smart 12GB RAM 256GB ROM 50.0MP 5500mAh</a>
+								</h6>
+								<div class="product_price">₹12,999.00<span>₹16,999.00</span></div>
+								</div>
+							</div>
+
+							<!-- WhatsApp button -->
+							<div class="red_button add_to_cart_button">
+								<a 
+								href="https://wa.me/918129132449?text=Hello,%20I%20am%20interested%20in%20the%20Oppo%20K12X%205G%20Mobile%20Phone%20Smart%2012GB%20RAM%20256GB%20ROM%2050.0MP%205500mAh.%20The%20price%20is%20₹12,999.00.%20Please%20share%20more%20details."
+								target="_blank">
+								Know More
+								</a>
+							</div>
+						</div>
 
 
-<!-- Hero Section -->
-<section class="hero-section d-flex align-items-center justify-content-center text-center">
-  <!-- Overlay for dark effect -->
-  <div class="overlay"></div>
+						
 
-  <div class="container position-relative text-white">
-    <h1 class="display-3 fw-bold text-gold mb-3 animate-glow">
-      M & E Mobiles & Electronics
-    </h1>
-    <p class="lead mb-4 animate-slide">
-      Discover premium mobiles, electronics, watches & more.
-    </p>
-    <a href="#categories" class="btn btn-gold btn-lg shadow-lg animate-fade">
-      Get a Quote
-    </a>
-  </div>
-</section>
+						<!-- Product 2 -->
+
+						<div class="product-item mobile">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/mobile3.png" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">OPPO K13x 5G - Rugged Phone with 6000mAh Battery | OPPO India</a></h6>
+									<div class="product_price">$610.00</div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">Know More</a></div>
+						</div>
+
+						<!-- Product 3 -->
+
+						<div class="product-item mobile">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/mobile1.png" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Redmi 8 – Affordable Performance with Long-Lasting Battery</a></h6>
+									<div class="product_price">$120.00</div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+						</div>
+
+						<!-- Product 4 -->
+
+						<!-- <div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/product_4.png" alt="">
+								</div>
+								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
+								<div class="favorite favorite_left"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Xiaomi Redmi 14C 5G - Specs, Price, Review and Best Deals</a></h6>
+									<div class="product_price">$410.00</div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+						</div> -->
+
+						<!-- Product 5 -->
+
+						<!-- <div class="product-item women men">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/product_5.png" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">realme C33 (Aqua Blue, 4GB RAM, 64GB Storage) : Amazon.in: Electronics</a></h6>
+									<div class="product_price">$180.00</div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+						</div> -->
+
+						<!-- Product 6 -->
+
+						<!-- <div class="product-item accessories">
+							<div class="product discount product_filter">
+								<div class="product_image">
+									<img src="images/product_6.png" alt="">
+								</div>
+								<div class="favorite favorite_left"></div>
+								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="#single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
+									<div class="product_price">$520.00<span>$590.00</span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+						</div> -->
+
+						<!-- Product 7 -->
+
+						<!-- <div class="product-item women">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/product_7.png" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
+									<div class="product_price">$610.00</div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+						</div> -->
+
+						<!-- Product 8 -->
+
+						<!-- <div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/product_8.png" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
+									<div class="product_price">$120.00</div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+						</div> -->
+
+						<!-- Product 9 -->
+
+						<!-- <div class="product-item men">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/product_9.png" alt="">
+								</div>
+								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
+								<div class="favorite favorite_left"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
+									<div class="product_price">$410.00</div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+						</div> -->
+
+						<!-- Product 10 -->
+
+						<!-- <div class="product-item men">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/Audio Devices/aud_div1.png" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
+									<div class="product_price">$180.00</div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Best Sellers -->
+
+	<!-- <div class="best_sellers">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_title new_arrivals_title">
+						<h2>Best Sellers</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="product_slider_container">
+						<div class="owl-carousel owl-theme product_slider">
+
+							
+
+							<div class="owl-item product_slider_item">
+								<div class="product-item">
+									<div class="product discount">
+										<div class="product_image">
+											<img src="images/Audio Devices/aud_div2.png" alt="">
+										</div>
+										<div class="favorite favorite_left"></div>
+										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+										<div class="product_info">
+											<h6 class="product_name"><a href="single.html">ZEBRONICS AEON Over Ear Wireless Headphone with 110h Battery Backup, Supports Bluetooth & AUX, Gaming Mode, ENC, Dual Pairing, Rapid Charging (Black)</a></h6>
+											<div class="product_price">$520.00<span>$590.00</span></div>
+										</div>
+									</div>
+								</div>
+							</div>
 
 
-<!-- Categories Section -->
-<section id="categories" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center fw-bold text-gold mb-5">Our Produts</h2>
-    <div class="row g-4">
-      
-      <!-- Mobile Category -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card category-card shadow-lg border-0 rounded-4 overflow-hidden">
-          <img
-            src="cat1.jpg"
-            class="card-img-top"
-            alt="Mobiles"
-          />
-          <div class="card-body text-center">
-            <h5 class="card-title fw-bold text-dark">Mobiles</h5>
-            <a href="#" class="btn btn-outline-gold mt-3">Shop Now</a>
-          </div>
-        </div>
-      </div>
+							<div class="owl-item product_slider_item">
+								<div class="product-item women">
+									<div class="product">
+										<div class="product_image">
+											<img src="images/Audio Devices/aud_div3.png" alt="">
+										</div>
+										<div class="favorite"></div>
+										<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
+										<div class="product_info">
+											<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
+											<div class="product_price">$610.00</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-      <!-- Electronics Category -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card category-card shadow-lg border-0 rounded-4 overflow-hidden">
-          <img
-            src="cat3.jpg"
-            class="card-img-top"
-            alt="Electronics"
-          />
-          <div class="card-body text-center">
-            <h5 class="card-title fw-bold text-dark">Electronics</h5>
-            <a href="#" class="btn btn-outline-gold mt-3">Shop Now</a>
-          </div>
-        </div>
-      </div>
 
-      <!-- Watches Category -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card category-card shadow-lg border-0 rounded-4 overflow-hidden">
-          <img
-            src="cat2.jpg"
-            class="card-img-top"
-            alt="Watches"
-          />
-          <div class="card-body text-center">
-            <h5 class="card-title fw-bold text-dark">Watches</h5>
-            <a href="#" class="btn btn-outline-gold mt-3">Shop Now</a>
-          </div>
-        </div>
-      </div>
+							<div class="owl-item product_slider_item">
+								<div class="product-item women">
+									<div class="product">
+										<div class="product_image">
+											<img src="images/Audio Devices/aud_div4.png" alt="">
+										</div>
+										<div class="favorite"></div>
+										<div class="product_info">
+											<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
+											<div class="product_price">$120.00</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-      <!-- Headsets Category -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card category-card shadow-lg border-0 rounded-4 overflow-hidden">
-          <img src="cat4.jpg" class="card-img-top" alt="Headsets"/>
-          <div class="card-body text-center">
-            <h5 class="card-title fw-bold text-dark">Headsets</h5>
-            <a href="#" class="btn btn-outline-gold mt-3">Shop Now</a>
-          </div>
-        </div>
-      </div>
 
-    </div>
-  </div>
-</section>
+							<div class="owl-item product_slider_item">
+								<div class="product-item accessories">
+									<div class="product">
+										<div class="product_image">
+											<img src="images/product_4.png" alt="">
+										</div>
+										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
+										<div class="favorite favorite_left"></div>
+										<div class="product_info">
+											<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
+											<div class="product_price">$410.00</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-<!-- Offers Section -->
-<section id="offers" class="py-5 bg-light position-relative">
-  <div class="container">
-    <h2 class="text-center fw-bold text-gold mb-5 display-5">
-      ✨ Special Offers ✨
-    </h2>
 
-    <div class="row g-4">
-      <!-- Offer 1 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="offer-card card border-0 shadow-lg h-100 overflow-hidden">
-          <div class="offer-img-wrapper">
-            <img
-              src="offers-mobiles.jpg"
-              class="card-img-top"
-              alt="Offer 1"
-            />
-            <span class="offer-badge">20% OFF</span>
-          </div>
-          <div class="card-body text-center p-4">
-            <h5 class="card-title fw-bold">Flat 20% Off Mobiles</h5>
-            <p class="text-muted">Grab the latest smartphones at unbeatable prices.</p>
-            <a href="#" class="btn btn-gold mt-3">Shop Now</a>
-          </div>
-        </div>
-      </div>
+							<div class="owl-item product_slider_item">
+								<div class="product-item women men">
+									<div class="product">
+										<div class="product_image">
+											<img src="images/product_5.png" alt="">
+										</div>
+										<div class="favorite"></div>
+										<div class="product_info">
+											<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
+											<div class="product_price">$180.00</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-      <!-- Offer 2 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="offer-card card border-0 shadow-lg h-100 overflow-hidden">
-          <div class="offer-img-wrapper">
-            <img
-              src="offer-watches.jpg"
-              class="card-img-top"
-              alt="Offer 2"
-            />
-            <span class="offer-badge bg-success">BOGO</span>
-          </div>
-          <div class="card-body text-center p-4">
-            <h5 class="card-title fw-bold">Buy 1 Get 1 Free</h5>
-            <p class="text-muted">On selected watches and accessories.</p>
-            <a href="#" class="btn btn-gold mt-3">Shop Now</a>
-          </div>
-        </div>
-      </div>
 
-      <!-- Offer 3 -->
-      <div class="col-lg-4 col-md-6 mx-auto">
-        <div class="offer-card card border-0 shadow-lg h-100 overflow-hidden">
-          <div class="offer-img-wrapper">
-            <img
-              src="headset-offers.jpg"
-              class="card-img-top"
-              alt="Offer 3"
-            />
-            <span class="offer-badge bg-danger">50% OFF</span>
-          </div>
-          <div class="card-body text-center p-4">
-            <h5 class="card-title fw-bold">Headsets Mega Sale</h5>
-            <p class="text-muted">Up to 50% off on premium audio headsets.</p>
-            <a href="#" class="btn btn-gold mt-3">Shop Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+							<div class="owl-item product_slider_item">
+								<div class="product-item accessories">
+									<div class="product discount">
+										<div class="product_image">
+											<img src="images/product_6.png" alt="">
+										</div>
+										<div class="favorite favorite_left"></div>
+										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+										<div class="product_info">
+											<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
+											<div class="product_price">$520.00<span>$590.00</span></div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-<!-- About Section -->
-<section id="about" class="py-5 position-relative">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <!-- Left Image -->
-      <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-        <div class="about-img rounded-4 shadow-lg overflow-hidden">
-          <img
-            src="about.png"
-            alt="About Us"
-            class="img-fluid w-100"
-          />
-        </div>
-      </div>
 
-      <!-- Right Content -->
-      <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
-        <h2 class="fw-bold text-gold mb-4">About Us</h2>
-        <p class="text-muted mb-4" style="line-height: 1.8;">
-          At <span class="fw-semibold text-dark">M & E Products & Services</span>, 
-          we are dedicated to providing premium mobiles, electronics, watches, 
-          and accessories. Our goal is to deliver 
-          <span class="text-gold">quality products</span> at the best prices, 
-          backed by <span class="fw-semibold">fast delivery</span> and 
-          <span class="fw-semibold">customer-first support</span>.
-        </p>
-        <ul class="list-unstyled mb-4">
-          <li class="mb-2">
-            <i class="fas fa-check-circle text-gold me-2"></i> Trusted by hundreds of happy customers
-          </li>
-          <li class="mb-2">
-            <i class="fas fa-check-circle text-gold me-2"></i> Affordable & genuine products
-          </li>
-          <li>
-            <i class="fas fa-check-circle text-gold me-2"></i> Fast delivery and easy returns
-          </li>
-        </ul>
-        <a href="#categories" class="btn btn-gold btn-lg shadow-sm">
-          Explore Our Collections
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+							<div class="owl-item product_slider_item">
+								<div class="product-item women">
+									<div class="product">
+										<div class="product_image">
+											<img src="images/product_7.png" alt="">
+										</div>
+										<div class="favorite"></div>
+										<div class="product_info">
+											<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
+											<div class="product_price">$610.00</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-<!-- Contact Section -->
-<section id="contact" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center fw-bold text-gold mb-5">Contact Us</h2>
-    <div class="row g-4">
-      
-      <!-- Contact Form -->
-      <div class="col-lg-6">
-        <div class="contact-form p-4 shadow-lg rounded-4 bg-white">
-          <form>
-            <div class="mb-3">
-              <input
-                type="text"
-                class="form-control form-control-lg"
-                placeholder="Your Name"
-                required
-              />
-            </div>
-            <div class="mb-3">
-              <input
-                type="email"
-                class="form-control form-control-lg"
-                placeholder="Your Email"
-                required
-              />
-            </div>
-            <div class="mb-3">
-              <textarea
-                class="form-control form-control-lg"
-                rows="5"
-                placeholder="Your Message"
-                required
-              ></textarea>
-            </div>
-            <button type="submit" class="btn btn-gold btn-lg w-100">
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
 
-      <!-- Google Map -->
-      <div class="col-lg-6">
-        <div class="map-wrapper shadow-lg rounded-4 overflow-hidden">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18..."
-            width="100%"
-            height="100%"
-            style="border:0; min-height:350px;"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
-        </div>
-      </div>
+							<div class="owl-item product_slider_item">
+								<div class="product-item accessories">
+									<div class="product">
+										<div class="product_image">
+											<img src="images/product_8.png" alt="">
+										</div>
+										<div class="favorite"></div>
+										<div class="product_info">
+											<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
+											<div class="product_price">$120.00</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-    </div>
-  </div>
-</section>
 
-<!-- Extra CSS -->
-<style>
-  /* Button styling */
-  .btn-gold {
-    background-color: #d4af37;
-    color: #111;
-    border-radius: 50px;
-    font-weight: 600;
-    padding: 12px 30px;
-    transition: all 0.3s ease;
-  }
+							<div class="owl-item product_slider_item">
+								<div class="product-item men">
+									<div class="product">
+										<div class="product_image">
+											<img src="images/product_9.png" alt="">
+										</div>
+										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
+										<div class="favorite favorite_left"></div>
+										<div class="product_info">
+											<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
+											<div class="product_price">$410.00</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-  .btn-gold:hover {
-    background-color: #b9962e;
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(212,175,55,0.4);
-  }
 
-  /* Contact Form */
-  .contact-form input,
-  .contact-form textarea {
-    border-radius: 12px;
-    border: 1px solid #ddd;
-    padding: 12px 15px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
+							<div class="owl-item product_slider_item">
+								<div class="product-item men">
+									<div class="product">
+										<div class="product_image">
+											<img src="images/product_10.png" alt="">
+										</div>
+										<div class="favorite"></div>
+										<div class="product_info">
+											<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
+											<div class="product_price">$180.00</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    border-color: #d4af37;
-    box-shadow: 0 0 8px rgba(212,175,55,0.4);
-    outline: none;
-  }
 
-  /* Map wrapper */
-  .map-wrapper iframe {
-    transition: transform 0.3s ease;
-  }
+						<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
+							<i class="fa fa-chevron-left" aria-hidden="true"></i>
+						</div>
+						<div class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
 
-  .map-wrapper:hover iframe {
-    transform: scale(1.02);
-  }
+	<!-- Benefit -->
 
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .contact-form, .map-wrapper {
-      min-height: 300px;
-    }
-  }
-</style>
-
-<!-- Footer -->
-<footer class="footer bg-dark text-white pt-5 pb-3">
-  <div class="container">
-    <div class="row g-4">
-      
-      <!-- About / Description -->
-      <div class="col-lg-4 col-md-6">
-        <h4 class="fw-bold text-gold mb-3">M & E Products & Services</h4>
-        <p class="text-muted">
-          Your trusted marketplace for mobiles, electronics, watches, headsets, and accessories. 
-          Quality products, affordable prices, and fast delivery are our promise to you.
-        </p>
-        <p class="text-muted mt-3">
-          <small>Designed by <span class="text-gold">Venusco Tech Solutions</span></small>
-        </p>
-      </div>
-
-      <!-- Quick Links -->
-      <div class="col-lg-3 col-md-6">
-        <h5 class="fw-bold text-gold mb-3">Quick Links</h5>
-        <ul class="list-unstyled">
-          <li><a href="#categories" class="text-white text-decoration-none">Categories</a></li>
-          <li><a href="#offers" class="text-white text-decoration-none">Offers</a></li>
-          <li><a href="#about" class="text-white text-decoration-none">About</a></li>
-          <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact Info -->
-      <div class="col-lg-3 col-md-6">
-        <h5 class="fw-bold text-gold mb-3">Contact Info</h5>
-        <ul class="list-unstyled text-muted">
-          <li class="mb-2"><i class="fas fa-phone me-2"></i> +91 9876543210</li>
-          <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@meproducts.com</li>
-          <li><i class="fas fa-map-marker-alt me-2"></i> Cherukara, Perinthalmanna, Malappuram, Kerala</li>
-        </ul>
-      </div>
-
-      <!-- Social Media -->
-      <div class="col-lg-2 col-md-6 text-center text-md-start">
-        <h5 class="fw-bold text-gold mb-3">Follow Us</h5>
-        <a href="#" class="social-icon me-2"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-      </div>
-
-    </div>
-
-    <hr class="my-4 border-light opacity-25" />
-
-    <!-- Footer Bottom -->
-    <div class="text-center text-muted small">
-      &copy; 2025 M & E Products & Services. All Rights Reserved.
-    </div>
-  </div>
-</footer>
-
-<!-- Footer CSS -->
-<style>
-  .text-gold { color: #d4af37; }
-
-  /* Social Icons */
-  .social-icon {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    background-color: #111;
-    color: #d4af37;
-    border-radius: 50%;
-    text-align: center;
-    transition: all 0.3s ease;
-  }
-
-  .social-icon:hover {
-    color: #fff;
-    background-color: #d4af37;
-    transform: translateY(-3px) scale(1.2);
-  }
-
-  a.text-white:hover { color: #d4af37; text-decoration: none; }
-
-  @media (max-width: 768px) {
-    .footer .text-md-start { text-align: center !important; margin-bottom: 1rem; }
-    .footer .social-icon { margin-bottom: 0.5rem; }
-  }
-</style>
-
+<div class="benefit">
+	<div class="container">
+		<div class="row benefit_row">
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
+					<div class="benefit_content">
+						<h6>Delivery Across Kerala</h6>
+						<p>Fast and reliable coverage statewide</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+					<div class="benefit_content">
+						<h6>Service Available</h6>
+						<p>Quick response for all requirements</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
+					<div class="benefit_content">
+						<h6>Affordable Pricing</h6>
+						<p>Best value for money guaranteed</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon"><i class="fa fa-thumbs-up" aria-hidden="true"></i></div>
+					<div class="benefit_content">
+						<h6>Trusted Services</h6>
+						<p>Reliable support you can count on</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 
+	<!-- Footer -->
 
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
+						<ul class="footer_nav">
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">FAQs</a></li>
+							<li><a href="contact.html">Contact us</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="footer_nav_container text-center">
+						<div class="cr">
+							© 2025 All Rights Reserved. Designed with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="www.venusco.in">Venusco Tech Solutions</a>
+						</div>
+					</div>
+				</div>
+			</div>
 
-  <script>
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const closeSidebar = document.getElementById('closeSidebar');
+		</div>
+	</footer>
 
-    sidebarToggle.addEventListener('click', () => {
-      sidebar.classList.add('active');
-      overlay.classList.add('active');
-    });
+</div>
 
-    closeSidebar.addEventListener('click', () => {
-      sidebar.classList.remove('active');
-      overlay.classList.remove('active');
-    });
-
-    overlay.addEventListener('click', () => {
-      sidebar.classList.remove('active');
-      overlay.classList.remove('active');
-    });
-  </script>
-
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="js/custom.js"></script>
 </body>
+
 </html>
