@@ -358,21 +358,64 @@
 					</div>
 				</div>
 			</div>
-			<div class="row align-items-center">
-				<div class="col text-center">
-					<div class="new_arrivals_sorting">
-						<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".mobile">Mobiles</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">Accessories</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".audio">Audio Devices</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".sounds">Sound & Recording</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".watchs">Watches</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".gadgets">Electronic Gadgets</li>
-						</ul>
-					</div>
+
+			<style>
+
+				.new_arrivals_sorting_wrapper {
+				overflow-x: auto;                /* enables horizontal scroll */
+				overflow-y: hidden;
+				white-space: nowrap;             /* prevents wrapping */
+				-webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
+				scrollbar-width: thin;
+				scrollbar-color: #ccc transparent;
+				}
+
+				.arrivals_grid_sorting {
+				display: inline-flex;            /* keeps items in one line */
+				gap: 10px;
+				padding: 10px;
+				margin: 0;
+				}
+
+				.arrivals_grid_sorting li {
+				list-style: none;
+				flex: 0 0 auto;
+				cursor: pointer;
+				background: #f5f5f5;
+				padding: 8px 16px;
+				border-radius: 20px;
+				text-transform: capitalize;
+				transition: all 0.3s ease;
+				white-space: nowrap;
+				}
+
+				.arrivals_grid_sorting li.active {
+				background: #000;
+				color: #fff;
+				}
+
+				.arrivals_grid_sorting li:hover {
+				background: #ddd;
+				}
+
+			</style>
+
+			<div class="row">
+			<div class="col-12">
+				<div class="new_arrivals_sorting_wrapper mt-4">
+				<ul class="arrivals_grid_sorting button-group filters-button-group">
+					<li class="grid_sorting_button active is-checked" data-filter="*">All</li>
+					<li class="grid_sorting_button" data-filter=".mobile">Mobiles</li>
+					<li class="grid_sorting_button" data-filter=".accessories">Accessories</li>
+					<li class="grid_sorting_button" data-filter=".audio">Audio Devices</li>
+					<li class="grid_sorting_button" data-filter=".sounds">Sound & Recording</li>
+					<li class="grid_sorting_button" data-filter=".watchs">Watches</li>
+					<li class="grid_sorting_button" data-filter=".gadgets">Electronic Gadgets</li>
+				</ul>
 				</div>
 			</div>
+			</div>
+
 			<div class="row">
 				<div class="col">
 					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
