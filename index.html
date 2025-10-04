@@ -122,7 +122,7 @@
 							</ul>
 							<ul class="navbar_user">
 								<li>
-									<a href="tel:+919999999999" title="Call Now">
+									<a href="tel:+919947241065" title="Call Now">
 										<i class="fa fa-phone" aria-hidden="true"></i>
 									</a>
 								</li>
@@ -223,7 +223,7 @@
         </p>
         
         <div>
-          <a href="shop.html" class="btn btn-lg" style="background:#ffa600; color:#fff; padding:12px 32px; border-radius:30px; font-weight:600;">
+          <a href="#products" class="btn btn-lg" style="background:#ffa600; color:#fff; padding:12px 32px; border-radius:30px; font-weight:600;">
             See Our Collection
           </a>
         </div>
@@ -242,6 +242,57 @@
 </div>
 
 
+	<!-- Inline script: ensure Know More WhatsApp links include product name and price -->
+	<script>
+	(function(){
+		// Run after DOM ready
+		function updateWhatsAppLinks(){
+			var buttons = document.querySelectorAll('.product-grid .add_to_cart_button a');
+			buttons.forEach(function(a){
+				try{
+					var product = a.closest('.product-item');
+					if(!product) return;
+
+					var nameEl = product.querySelector('.product_name a') || product.querySelector('.product_name');
+					var priceEl = product.querySelector('.product_price');
+
+					var name = nameEl ? nameEl.textContent.trim() : '';
+					var price = '';
+					if(priceEl){
+						// Remove nested old-price spans text
+						var clone = priceEl.cloneNode(true);
+						Array.from(clone.querySelectorAll('*')).forEach(function(ch){ ch.parentNode && ch.parentNode.removeChild(ch); });
+						price = clone.textContent.trim();
+						if(!price) price = priceEl.textContent.trim();
+					}
+
+					// find phone in existing href (wa.me/number) if present
+					var href = a.getAttribute('href') || '';
+					var phoneMatch = href.match(/wa\.me\/(\d+)/);
+					var phone = phoneMatch ? phoneMatch[1] : '919947241065';
+
+					var parts = [];
+					if(name) parts.push(name);
+					if(price) parts.push('priced at ' + price);
+					var message = 'Hello, I am interested in the ' + (parts.length ? parts.join(' — ') : 'product') + '. Please share price and availability.';
+
+					var newHref = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
+					a.setAttribute('href', newHref);
+					a.setAttribute('target', '_blank');
+				}catch(e){
+					// ignore per-item errors
+					console.error('updateWhatsAppLinks error', e);
+				}
+			});
+		}
+
+		if(document.readyState === 'loading'){
+			document.addEventListener('DOMContentLoaded', updateWhatsAppLinks);
+		} else {
+			updateWhatsAppLinks();
+		}
+	})();
+	</script>
 	<!-- Banner -->
 
 	<div class="banner">
@@ -250,21 +301,21 @@
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/cat1.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">Mobiles</a>
+							<a href="">Mobiles</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/cat4.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">Mobile Accessories</a>
+							<a href="#products">Mobile Accessories</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/cat5.png)">
 						<div class="banner_category">
-							<a href="categories.html">Audio Devices</a>
+							<a href="#products">Audio Devices</a>
 						</div>
 					</div>
 				</div>
@@ -273,21 +324,21 @@
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/cat6.png)">
 						<div class="banner_category">
-							<a href="categories.html">Sound & Recording</a>
+							<a href="#products">Sound & Recording</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/cat2.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">Watches</a>
+							<a href="#products">Watches</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/cat3.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">Electronic Gadgets</a>
+							<a href="#products">Electronic Gadgets</a>
 						</div>
 					</div>
 				</div>
@@ -303,7 +354,7 @@
 			<div class="row">
 				<div class="col text-center">
 					<div class="section_title new_arrivals_title">
-						<h2>New Arrivals</h2>
+						<h2>Our Products</h2>
 					</div>
 				</div>
 			</div>
@@ -314,10 +365,10 @@
 							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
 							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".mobile">Mobiles</li>
 							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">Accessories</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">Audio Devices</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">Sound & Recording</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">Watches</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">Electronic Gadgets</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".audio">Audio Devices</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".sounds">Sound & Recording</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".watchs">Watches</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".gadgets">Electronic Gadgets</li>
 						</ul>
 					</div>
 				</div>
@@ -331,13 +382,13 @@
 						<div class="product-item mobile">
 							<div class="product discount product_filter">
 								<div class="product_image">
-								<img src="images/mobile2.png" alt="">
+								<img src="images/mobiles/mobile1.jpg" alt="">
 								</div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-₹3000</span></div>
 								<div class="product_info">
 								<h6 class="product_name">
-									<a href="single.html">Oppo K12X 5G Mobile Phone Smart 12GB RAM 256GB ROM 50.0MP 5500mAh</a>
+									<a href="">Oppo K12X 5G Mobile Phone Smart 12GB RAM 256GB ROM 50.0MP 5500mAh</a>
 								</h6>
 								<div class="product_price">₹12,999.00<span>₹16,999.00</span></div>
 								</div>
@@ -346,31 +397,30 @@
 							<!-- WhatsApp button -->
 							<div class="red_button add_to_cart_button">
 								<a 
-								href="https://wa.me/918129132449?text=Hello,%20I%20am%20interested%20in%20the%20Oppo%20K12X%205G%20Mobile%20Phone%20Smart%2012GB%20RAM%20256GB%20ROM%2050.0MP%205500mAh.%20The%20price%20is%20₹12,999.00.%20Please%20share%20more%20details."
+								href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Oppo%20K12X%205G%20Mobile%20Phone%20Smart%2012GB%20RAM%20256GB%20ROM%2050.0MP%205500mAh.%20The%20price%20is%20₹12,999.00.%20Please%20share%20more%20details."
 								target="_blank">
 								Know More
 								</a>
 							</div>
 						</div>
 
-
-						
-
 						<!-- Product 2 -->
 
 						<div class="product-item mobile">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/mobile3.png" alt="">
+									<img src="images/mobiles/mobile2.jpg" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">OPPO K13x 5G - Rugged Phone with 6000mAh Battery | OPPO India</a></h6>
-									<div class="product_price">$610.00</div>
+									<h6 class="product_name"><a href="">OPPO K13x 5G - Rugged Phone with 6000mAh Battery | OPPO India</a></h6>
+									<div class="product_price">₹50,999 <span class="text-muted small"></span></div>
 								</div>
 							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Know More</a></div>
+							<div class="red_button add_to_cart_button">
+								<a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20OPPO%20K13x%205G.%20Please%20share%20details%20and%20availability." target="_blank">Know More</a>
+							</div>
 						</div>
 
 						<!-- Product 3 -->
@@ -378,131 +428,813 @@
 						<div class="product-item mobile">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/mobile1.png" alt="">
+									<img src="images/mobiles/mobile3.jpg" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Redmi 8 – Affordable Performance with Long-Lasting Battery</a></h6>
-									<div class="product_price">$120.00</div>
+									<h6 class="product_name"><a href="">Redmi 8 – Affordable Performance with Long-Lasting Battery</a></h6>
+									<div class="product_price">₹9,999 <span class="text-muted small"></span></div>
 								</div>
 							</div>
-							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Redmi%208.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
 						</div>
 
 						<!-- Product 4 -->
 
-						<!-- <div class="product-item accessories">
+						<div class="product-item mobile">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product_4.png" alt="">
+									<img src="images/mobiles/mobile4.jpg" alt="">
 								</div>
 								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Xiaomi Redmi 14C 5G - Specs, Price, Review and Best Deals</a></h6>
-									<div class="product_price">$410.00</div>
+									<h6 class="product_name"><a href="">Xiaomi Redmi 14C 5G - Specs, Price, Review and Best Deals</a></h6>
+									<div class="product_price">₹34,499 <span class="text-muted small"></span></div>
 								</div>
 							</div>
-							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-						</div> -->
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Xiaomi%20Redmi%2014C%205G.%20Please%20share%20details." target="_blank">Know More</a></div>
+						</div>
 
 						<!-- Product 5 -->
 
-						<!-- <div class="product-item women men">
+						<div class="product-item mobile">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product_5.png" alt="">
+									<img src="images/mobiles/mobile5.jpg" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">realme C33 (Aqua Blue, 4GB RAM, 64GB Storage) : Amazon.in: Electronics</a></h6>
-									<div class="product_price">$180.00</div>
+									<h6 class="product_name"><a href="">realme C33 (Aqua Blue, 4GB RAM, 64GB Storage)</a></h6>
+									<div class="product_price">₹14,999 <span class="text-muted small"></span></div>
 								</div>
 							</div>
-							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-						</div> -->
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20realme%20C33.%20Please%20share%20price%20and%20stock%20information." target="_blank">Know More</a></div>
+						</div>
 
-						<!-- Product 6 -->
 
-						<!-- <div class="product-item accessories">
+
+						<!-- audio 1 -->
+
+						<div class="product-item audio">
 							<div class="product discount product_filter">
 								<div class="product_image">
-									<img src="images/product_6.png" alt="">
+									<img src="images/audios/audio1.jpg" alt="">
 								</div>
 								<div class="favorite favorite_left"></div>
-								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-₹1,660</span></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="#single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-									<div class="product_price">$520.00<span>$590.00</span></div>
+									<h6 class="product_name"><a href="#">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
+									<div class="product_price">₹43,160<span>₹48,970</span></div>
 								</div>
 							</div>
-							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-						</div> -->
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Fujifilm%20X100T%20camera.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
 
 						<!-- Product 7 -->
 
-						<!-- <div class="product-item women">
+						<div class="product-item audio">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product_7.png" alt="">
+									<img src="images/audios/audio2.jpg" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-									<div class="product_price">$610.00</div>
+									<h6 class="product_name"><a href="">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
+									<div class="product_price">₹50,999 <span class="text-muted small"></span></div>
 								</div>
 							</div>
-							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-						</div> -->
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Samsung%20CF591%20Monitor.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
 
 						<!-- Product 8 -->
 
-						<!-- <div class="product-item accessories">
+						<div class="product-item audio">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product_8.png" alt="">
+									<img src="images/audios/audio3.jpg" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-									<div class="product_price">$120.00</div>
+									<h6 class="product_name"><a href="">Blue Yeti USB Microphone Blackout Edition</a></h6>
+									<div class="product_price">₹9,999 <span class="text-muted small"></span></div>
 								</div>
 							</div>
-							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-						</div> -->
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Blue%20Yeti%20Microphone.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
 
 						<!-- Product 9 -->
 
-						<!-- <div class="product-item men">
+						<div class="product-item audio">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product_9.png" alt="">
+									<img src="images/audios/audio4.jpg" alt="">
 								</div>
 								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-									<div class="product_price">$410.00</div>
+									<h6 class="product_name"><a href="">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
+									<div class="product_price">₹34,499 <span class="text-muted small"></span></div>
 								</div>
 							</div>
-							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-						</div> -->
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20DYMO%20LabelWriter%20450%20Printer.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
 
 						<!-- Product 10 -->
 
-						<!-- <div class="product-item men">
+						<div class="product-item audio">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/Audio Devices/aud_div1.png" alt="">
+									<img src="images/audios/audio5.jpg" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-									<div class="product_price">$180.00</div>
+									<h6 class="product_name"><a href="">Pryma Headphones, Rose Gold & Grey</a></h6>
+									<div class="product_price">₹14,999 <span class="text-muted small"></span></div>
 								</div>
 							</div>
-							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-						</div> -->
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Pryma%20Headphones.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+						<!-- Product 11 -->
+
+						<div class="product-item audio">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/audios/audio6.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Pryma Headphones, Rose Gold & Grey</a></h6>
+									<div class="product_price">₹14,999 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Pryma%20Headphones.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+
+						<!-- watchs 1 -->
+
+						<div class="product-item watchs">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/watchs/watch1.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Men's Sport Smartwatch</a></h6>
+									<div class="product_price">₹4,999 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20watch%20pictured%20as%20watch1.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- Product 10 -->
+
+						<div class="product-item watchs">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/watchs/watch2.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Women's Fashion Analog Watch (Rose Gold)</a></h6>
+									<div class="product_price">₹1,999 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20watch%20pictured%20as%20watch2.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- Product 10 -->
+
+						<div class="product-item watchs">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/watchs/watch3.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Classic Leather Strap Analog Watch</a></h6>
+									<div class="product_price">₹2,499 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20watch%20pictured%20as%20watch3.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- Product 10 -->
+
+						<div class="product-item watchs">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/watchs/watch4.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Chronograph Stainless Steel Watch</a></h6>
+									<div class="product_price">₹3,999 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20watch%20pictured%20as%20watch4.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- Product 10 -->
+
+						<div class="product-item watchs">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/watchs/watch5.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Minimalist Dress Watch (Slim Case)</a></h6>
+									<div class="product_price">₹1,299 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20watch%20pictured%20as%20watch5.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- Product 10 -->
+
+						<div class="product-item watchs">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/watchs/watch6.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Fitness Tracker Band (Steps/HR)</a></h6>
+									<div class="product_price">₹2,299 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20watch%20pictured%20as%20watch6.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- Product 10 -->
+
+						<div class="product-item watchs">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/watchs/watch7.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Hybrid Smartwatch (Analog + Notifications)</a></h6>
+									<div class="product_price">₹6,499 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20watch%20pictured%20as%20watch7.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- Product 10 -->
+
+						<div class="product-item watchs">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/watchs/watch8.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Digital LED Sports Watch</a></h6>
+									<div class="product_price">₹999 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20watch%20pictured%20as%20watch8.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- Product 10 -->
+
+						<div class="product-item watchs">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/watchs/watch9.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Diver-style Quartz Watch (Water-resistant)</a></h6>
+									<div class="product_price">₹5,499 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20watch%20pictured%20as%20watch9.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- Product 10 -->
+
+						<div class="product-item watchs">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/watchs/watch10.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Premium Metal Strap Watch (Brushed Finish)</a></h6>
+									<div class="product_price">₹8,999 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20watch%20pictured%20as%20watch10.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- Product 10 -->
+
+						<div class="product-item watchs">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/watchs/watch11.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Full-feature Smartwatch (GPS + Bluetooth)</a></h6>
+									<div class="product_price">₹9,999 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20watch%20pictured%20as%20watch11.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+						<!-- Product 10 -->
+
+						<div class="product-item watchs">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/watchs/watch12.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Casual Silicone Strap Watch</a></h6>
+									<div class="product_price">₹1,499 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20watch%20pictured%20as%20watch12.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+
+
+
+						<!-- accessories 10 -->
+
+						<div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/accessories/acc1.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Wireless In-Ear Earbuds</a></h6>
+									<div class="product_price">₹1,299 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Wireless%20In-Ear%20Earbuds%20shown%20in%20acc1.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- accessories 10 -->
+
+						<div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/accessories/acc2.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">USB-C Fast Charger (18W)</a></h6>
+									<div class="product_price">₹799 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20USB-C%20Fast%20Charger%20shown%20in%20acc2.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- accessories 10 -->
+
+						<div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/accessories/acc3.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Protective Phone Case (Clear)</a></h6>
+									<div class="product_price">₹499 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Protective%20Phone%20Case%20shown%20in%20acc3.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- accessories 10 -->
+
+						<div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/accessories/acc4.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Screen Protector (Tempered Glass)</a></h6>
+									<div class="product_price">₹299 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Screen%20Protector%20shown%20in%20acc4.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- accessories 10 -->
+
+						<div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/accessories/acc5.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Bluetooth Car FM Transmitter</a></h6>
+									<div class="product_price">₹899 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Bluetooth%20Car%20FM%20Transmitter%20shown%20in%20acc5.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- accessories 10 -->
+
+						<div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/accessories/acc6.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Portable Power Bank 10,000mAh</a></h6>
+									<div class="product_price">₹1,499 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Portable%20Power%20Bank%20shown%20in%20acc6.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- accessories 10 -->
+
+						<div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/accessories/acc7.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Magnetic Wireless Car Mount</a></h6>
+									<div class="product_price">₹799 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Magnetic%20Wireless%20Car%20Mount%20shown%20in%20acc7.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- accessories 10 -->
+
+						<div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/accessories/acc8.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Clip-on Selfie Ring Light</a></h6>
+									<div class="product_price">₹599 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Clip-on%20Selfie%20Ring%20Light%20shown%20in%20acc8.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- accessories 10 -->
+
+						<div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/accessories/acc9.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">USB-C to 3.5mm Adapter</a></h6>
+									<div class="product_price">₹299 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20USB-C%20to%203.5mm%20Adapter%20shown%20in%20acc9.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- accessories 10 -->
+
+						<div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/accessories/acc10.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Foldable Phone Stand</a></h6>
+									<div class="product_price">₹399 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Foldable%20Phone%20Stand%20shown%20in%20acc10.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- accessories 10 -->
+
+						<div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/accessories/acc11.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Micro USB Cable (1m)</a></h6>
+									<div class="product_price">₹199 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Micro%20USB%20Cable%20shown%20in%20acc11.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- accessories 10 -->
+
+						<div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/accessories/acc11.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Lens Cleaning Kit</a></h6>
+									<div class="product_price">₹249 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Lens%20Cleaning%20Kit%20shown%20in%20acc12.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+						<!-- accessories 10 -->
+
+						<div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/accessories/acc12.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Cable Organizer Clips (Pack)</a></h6>
+									<div class="product_price">₹199 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Cable%20Organizer%20Pack%20shown%20in%20acc13.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+
+						<div class="product-item accessories">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/accessories/acc13.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Car AUX Cable (3.5mm)</a></h6>
+									<div class="product_price">₹199 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Car%20AUX%20Cable%20shown%20in%20acc13.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+					
+						<!-- sounds 10 -->
+
+						<div class="product-item sounds">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/sound/sound1.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Portable Bluetooth Speaker</a></h6>
+									<div class="product_price">₹1,199 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Portable%20Bluetooth%20Speaker%20shown%20in%20sound1.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+						<!-- sounds 10 -->
+
+						<div class="product-item sounds">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/sound/sound2.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Wired Over-Ear Headphones</a></h6>
+									<div class="product_price">₹899 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Wired%20Over-Ear%20Headphones%20shown%20in%20sound2.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+						<!-- sounds 10 -->
+
+						<div class="product-item sounds">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/sound/sound3.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Compact Studio Microphone</a></h6>
+									<div class="product_price">₹2,499 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Compact%20Studio%20Microphone%20shown%20in%20sound3.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+						<!-- sounds 10 -->
+
+						<div class="product-item sounds">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/sound/sound4.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Compact Mixer (2-channel)</a></h6>
+									<div class="product_price">₹3,499 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Compact%20Mixer%20shown%20in%20sound4.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+						<!-- sounds 10 -->
+
+						<div class="product-item sounds">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/sound/sound5.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Studio Monitor (Compact)</a></h6>
+									<div class="product_price">₹4,999 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Studio%20Monitor%20shown%20in%20sound6.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+						<!-- sounds 10 -->
+
+						<div class="product-item sounds">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/sound/sound6.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">USB Audio Interface (2-in-2-out)</a></h6>
+									<div class="product_price">₹3,799 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20USB%20Audio%20Interface%20shown%20in%20sound8.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+						<!-- sounds 10 -->
+
+						<div class="product-item sounds">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/sound/sound7.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Compact Karaoke Microphone</a></h6>
+									<div class="product_price">₹1,099 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Compact%20Karaoke%20Microphone%20shown%20in%20sound7.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+						<!-- sounds 10 -->
+
+						<div class="product-item sounds">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/sound/sound8.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Portable PA Horn Speaker</a></h6>
+									<div class="product_price">₹2,499 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Portable%20PA%20Horn%20Speaker%20shown%20in%20sound8.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+
+
+
+						<!-- gargets 1 -->
+
+						<div class="product-item gadgets">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/gardgets/gardget1.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Mini Drone with Camera</a></h6>
+									<div class="product_price">₹4,499 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Mini%20Drone%20shown%20in%20gardget1.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- gargets 1 -->
+
+						<div class="product-item gadgets">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/gardgets/gardget2.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Smart Home Wi-Fi Plug</a></h6>
+									<div class="product_price">₹999 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Smart%20Home%20Wi-Fi%20Plug%20shown%20in%20gardget2.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- gargets 1 -->
+
+						<div class="product-item gadgets">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/gardgets/gardget3.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Smart LED Bulb (RGB)</a></h6>
+									<div class="product_price">₹699 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Smart%20LED%20Bulb%20shown%20in%20gardget3.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- gargets 1 -->
+
+						<div class="product-item gadgets">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/gardgets/gardget4.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">USB Rechargeable LED Torch</a></h6>
+									<div class="product_price">₹499 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20USB%20Rechargeable%20Torch%20shown%20in%20gardget5.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- gargets 1 -->
+
+						<div class="product-item gadgets">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/gardgets/gardget5.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Mini USB Vacuum Cleaner (Keyboard)</a></h6>
+									<div class="product_price">₹399 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Mini%20USB%20Vacuum%20Cleaner%20shown%20in%20gardget6.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- gargets 1 -->
+
+						<div class="product-item gadgets">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/gardgets/gardget6.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Smart Air Quality Sensor</a></h6>
+									<div class="product_price">₹1,999 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Smart%20Air%20Quality%20Sensor%20shown%20in%20gardget6.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
+												<!-- gargets 1 -->
+
+						<div class="product-item gadgets">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="images/gardgets/gardget7.jpg" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="">Bluetooth Tracker Tag (Key Finder)</a></h6>
+									<div class="product_price">₹699 <span class="text-muted small"></span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="https://wa.me/919947241065?text=Hello,%20I%20am%20interested%20in%20the%20Bluetooth%20Tracker%20Tag%20shown%20in%20gardget7.%20Please%20share%20price%20and%20availability." target="_blank">Know More</a></div>
+						</div>
+
 					</div>
 				</div>
 			</div>
@@ -534,10 +1266,10 @@
 											<img src="images/Audio Devices/aud_div2.png" alt="">
 										</div>
 										<div class="favorite favorite_left"></div>
-										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-₹1,660</span></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">ZEBRONICS AEON Over Ear Wireless Headphone with 110h Battery Backup, Supports Bluetooth & AUX, Gaming Mode, ENC, Dual Pairing, Rapid Charging (Black)</a></h6>
-											<div class="product_price">$520.00<span>$590.00</span></div>
+											<h6 class="product_name"><a href="">ZEBRONICS AEON Over Ear Wireless Headphone (Black)</a></h6>
+											<div class="product_price">₹41,999<span class="text-muted small">₹47,799</span></div>
 										</div>
 									</div>
 								</div>
@@ -553,8 +1285,8 @@
 										<div class="favorite"></div>
 										<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-											<div class="product_price">$610.00</div>
+											<h6 class="product_name"><a href="">Samsung CF591 27" FHD Curved Monitor</a></h6>
+											<div class="product_price">₹49,999 <span class="text-muted small"></span></div>
 										</div>
 									</div>
 								</div>
@@ -569,8 +1301,8 @@
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-											<div class="product_price">$120.00</div>
+											<h6 class="product_name"><a href="">Blue Yeti USB Microphone</a></h6>
+											<div class="product_price">₹9,999 <span class="text-muted small"></span></div>
 										</div>
 									</div>
 								</div>
@@ -586,8 +1318,8 @@
 										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
 										<div class="favorite favorite_left"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-											<div class="product_price">$410.00</div>
+											<h6 class="product_name"><a href="">DYMO LabelWriter 450 Turbo (Thermal Label Printer)</a></h6>
+											<div class="product_price">₹29,999 <span class="text-muted small"></span></div>
 										</div>
 									</div>
 								</div>
@@ -602,8 +1334,8 @@
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-											<div class="product_price">$180.00</div>
+											<h6 class="product_name"><a href="">On-Ear Fashion Headphones (Rose Gold)</a></h6>
+											<div class="product_price">₹14,999 <span class="text-muted small"></span></div>
 										</div>
 									</div>
 								</div>
@@ -617,10 +1349,10 @@
 											<img src="images/product_6.png" alt="">
 										</div>
 										<div class="favorite favorite_left"></div>
-										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-₹1,660</span></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-											<div class="product_price">$520.00<span>$590.00</span></div>
+											<h6 class="product_name"><a href="">Fujifilm X100T 16MP (Silver)</a></h6>
+											<div class="product_price">₹41,999<span class="text-muted small">₹47,799</span></div>
 										</div>
 									</div>
 								</div>
@@ -635,8 +1367,8 @@
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-											<div class="product_price">$610.00</div>
+											<h6 class="product_name"><a href="">Samsung CF591 27" FHD Curved Monitor</a></h6>
+											<div class="product_price">₹49,999 <span class="text-muted small"></span></div>
 										</div>
 									</div>
 								</div>
@@ -651,8 +1383,8 @@
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-											<div class="product_price">$120.00</div>
+											<h6 class="product_name"><a href="">Blue Yeti USB Microphone</a></h6>
+											<div class="product_price">₹9,999 <span class="text-muted small"></span></div>
 										</div>
 									</div>
 								</div>
@@ -668,8 +1400,8 @@
 										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
 										<div class="favorite favorite_left"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-											<div class="product_price">$410.00</div>
+											<h6 class="product_name"><a href="">DYMO LabelWriter 450 Turbo (Thermal Label Printer)</a></h6>
+											<div class="product_price">₹29,999 <span class="text-muted small"></span></div>
 										</div>
 									</div>
 								</div>
@@ -684,8 +1416,8 @@
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-											<div class="product_price">$180.00</div>
+											<h6 class="product_name"><a href="">On-Ear Fashion Headphones (Rose Gold)</a></h6>
+											<div class="product_price">₹14,999 <span class="text-muted small"></span></div>
 										</div>
 									</div>
 								</div>
